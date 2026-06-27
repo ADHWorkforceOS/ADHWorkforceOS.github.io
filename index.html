@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADH WorkforceOS | Free Interactive Demo Page</title>
+<style>
+:root{
+  --navy:#15124f;--blue:#3b45d9;--teal:#20c7b4;--bg:#f6f8fc;--white:#fff;
+  --text:#111827;--muted:#667085;--line:#e5e7eb;--shadow:0 18px 45px rgba(20,20,70,.12)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:18px 7%}
+.logo{font-weight:900;font-size:24px;color:var(--navy)}.logo span{color:var(--teal)}
+nav a{margin-left:18px;text-decoration:none;color:var(--text);font-weight:700}
+.btn{border:0;border-radius:13px;padding:13px 18px;font-weight:800;text-decoration:none;cursor:pointer;display:inline-block}
+.primary{background:var(--blue);color:white}.secondary{background:white;color:var(--blue);border:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:80px 7%;background:linear-gradient(135deg,#f8fbff,#eef4ff)}
+.eyebrow{color:var(--teal);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+h1{font-size:58px;line-height:1.03;margin:10px 0;color:var(--navy)}h2{font-size:38px;color:var(--navy);text-align:center;margin:0 0 25px}
+.lead{font-size:19px;line-height:1.65;color:var(--muted)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.demo-card{background:white;border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
+.demo-top{display:flex;justify-content:space-between;align-items:center}.live{background:#dcfce7;color:#15803d;border-radius:999px;padding:6px 10px;font-weight:900;font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0}
+.stat{background:#f8f9fd;border:1px solid var(--line);border-radius:18px;padding:16px}.stat small{color:var(--muted)}.stat b{display:block;font-size:28px;margin-top:5px}
+.chart{height:190px;border:1px solid var(--line);border-radius:18px;background:#fbfcff;display:flex;gap:14px;align-items:end;padding:18px}.bar{flex:1;background:linear-gradient(180deg,var(--teal),var(--blue));border-radius:10px 10px 0 0}
+.section{padding:70px 7%}.center{text-align:center}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 8px 25px rgba(16,24,40,.05)}
+.card h3{color:var(--navy)}.card p,.muted{color:var(--muted);line-height:1.6}
+.tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:22px}.tab{padding:12px 15px;border-radius:999px;border:1px solid var(--line);background:white;cursor:pointer;font-weight:800}.tab.active{background:var(--blue);color:white}
+.panel{display:none}.panel.active{display:block}
+.calc{max-width:900px;margin:auto;background:white;border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:var(--shadow)}
+.calc input{width:100%;accent-color:var(--blue)}.result{font-size:32px;font-weight:900;color:var(--navy)}
+.pricing{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.price h3{margin-top:0}.price h4{font-size:32px;color:var(--navy);margin:12px 0}.featured{border:2px solid var(--teal);transform:scale(1.03)}
+.ai-box{max-width:900px;margin:auto;background:var(--navy);color:white;border-radius:28px;padding:28px;box-shadow:var(--shadow)}
+.ai-box textarea{width:100%;height:110px;border:0;border-radius:16px;padding:15px;font:inherit}.ai-response{background:white;color:var(--text);border-radius:16px;padding:18px;margin-top:15px;min-height:70px}
+form{max-width:760px;margin:auto;display:grid;gap:13px;background:white;border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:var(--shadow)}
+input,textarea,select{padding:14px;border:1px solid var(--line);border-radius:13px;font:inherit}textarea{height:110px}
+.faq{max-width:850px;margin:auto}.q{background:white;border:1px solid var(--line);border-radius:17px;margin:10px 0;overflow:hidden}.q button{width:100%;text-align:left;background:white;border:0;padding:18px;font-size:17px;font-weight:900;cursor:pointer}.answer{display:none;padding:0 18px 18px;color:var(--muted);line-height:1.6}.q.open .answer{display:block}
+footer{padding:30px 7%;text-align:center;color:var(--muted)}
+@media(max-width:900px){.hero,.grid,.pricing{grid-template-columns:1fr}h1{font-size:38px}nav{display:none}.featured{transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ADH <span>WorkforceOS</span></div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#demo">Demo</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">Free Interactive Website</p>
+    <h1>Manage your workforce from one simple platform.</h1>
+    <p class="lead">ADH WorkforceOS is a modern HR platform for small businesses that need employee records, scheduling, time tracking, payroll preparation, forms, equipment tracking, and AI-powered HR help.</p>
+    <div class="actions">
+      <a href="#contact" class="btn primary">Request Demo</a>
+      <a href="#demo" class="btn secondary">Try Interactive Demo</a>
+    </div>
+  </div>
+  <div class="demo-card">
+    <div class="demo-top"><h3>Live Dashboard</h3><span class="live">Interactive</span></div>
+    <div class="stats">
+      <div class="stat"><small>Employees</small><b id="empCount">128</b></div>
+      <div class="stat"><small>Present Today</small><b>98</b></div>
+      <div class="stat"><small>Open PTO</small><b>9</b></div>
+      <div class="stat"><small>OT Hours</small><b>124</b></div>
+    </div>
+    <div class="chart">
+      <div class="bar" style="height:45%"></div><div class="bar" style="height:70%"></div>
+      <div class="bar" style="height:55%"></div><div class="bar" style="height:85%"></div>
+      <div class="bar" style="height:64%"></div><div class="bar" style="height:92%"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <p class="eyebrow center">Features</p>
+  <h2>Built for HR, operations, and small business teams.</h2>
+  <div class="grid">
+    <div class="card"><h3>👥 Employee Records</h3><p>Keep employee profiles, documents, contacts, job titles, and departments organized.</p></div>
+    <div class="card"><h3>📅 Scheduling</h3><p>Create schedules, manage shift coverage, track overtime, and view staffing needs.</p></div>
+    <div class="card"><h3>⏱ Time Tracking</h3><p>Track clock-ins, missed punches, PTO, overtime, and attendance exceptions.</p></div>
+    <div class="card"><h3>💳 Payroll Prep</h3><p>Review hours, overtime, PTO, and export payroll-ready reports.</p></div>
+    <div class="card"><h3>📝 Digital Forms</h3><p>PTO requests, missed punches, incident reports, write-ups, and equipment forms.</p></div>
+    <div class="card"><h3>✨ AI Assistant</h3><p>Generate professional HR documents, write-ups, policies, and manager notes.</p></div>
+  </div>
+</section>
+
+<section class="section" id="demo">
+  <p class="eyebrow center">Interactive Demo</p>
+  <h2>Click through the product areas.</h2>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('manager',this)">Manager View</button>
+    <button class="tab" onclick="showTab('employee',this)">Employee App</button>
+    <button class="tab" onclick="showTab('payroll',this)">Payroll Prep</button>
+    <button class="tab" onclick="showTab('forms',this)">Forms</button>
+  </div>
+  <div class="panel active card" id="manager"><h3>Manager View</h3><p>Managers can see attendance, late employees, open PTO, staffing gaps, write-ups, and AI recommendations.</p></div>
+  <div class="panel card" id="employee"><h3>Employee App</h3><p>Employees can clock in, view schedules, request PTO, complete forms, and read announcements.</p></div>
+  <div class="panel card" id="payroll"><h3>Payroll Prep</h3><p>Admins can audit hours, review overtime, approve PTO, and export payroll files.</p></div>
+  <div class="panel card" id="forms"><h3>Digital Forms</h3><p>Teams can submit missed punches, PTO requests, incident reports, and equipment checkouts.</p></div>
+</section>
+
+<section class="section">
+  <p class="eyebrow center">Savings Calculator</p>
+  <h2>Estimate monthly admin time savings.</h2>
+  <div class="calc">
+    <label><b>Number of employees:</b> <span id="empNum">50</span></label>
+    <input type="range" min="10" max="500" value="50" oninput="calcSavings(this.value)">
+    <p class="muted">Estimated admin hours saved each month:</p>
+    <div class="result"><span id="savedHours">25</span> hours</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="ai-box">
+    <p class="eyebrow">AI HR Assistant Demo</p>
+    <h2 style="color:white;text-align:left;margin-left:0">Generate professional HR wording.</h2>
+    <textarea id="aiText" placeholder="Example: Write a professional corrective action for an employee who is repeatedly late."></textarea>
+    <br><br>
+    <button class="btn primary" onclick="generateAI()">Generate Demo Response</button>
+    <div class="ai-response" id="aiResult">Your AI-generated HR response will appear here.</div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <p class="eyebrow center">Pricing</p>
+  <h2>Simple plans for small businesses.</h2>
+  <div class="pricing">
+    <div class="card price"><h3>Starter</h3><p>Up to 20 employees</p><h4>$99/mo</h4></div>
+    <div class="card price featured"><h3>Growth</h3><p>Up to 100 employees</p><h4>$249/mo</h4></div>
+    <div class="card price"><h3>Business</h3><p>Up to 300 employees</p><h4>$499/mo</h4></div>
+    <div class="card price"><h3>Enterprise</h3><p>Custom needs</p><h4>Custom</h4></div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <p class="eyebrow center">Contact</p>
+  <h2>Request a demo or investor conversation.</h2>
+  <form onsubmit="submitForm(event)">
+    <input required id="name" placeholder="Your Name">
+    <input required id="business" placeholder="Business Name">
+    <input required id="email" placeholder="Email Address" type="email">
+    <select>
+      <option>I'm interested as a customer</option>
+      <option>I'm interested as an investor</option>
+      <option>I'm interested as a partner</option>
+    </select>
+    <textarea placeholder="Tell us what you need"></textarea>
+    <button class="btn primary" type="submit">Submit</button>
+    <p id="formMsg" class="muted"></p>
+  </form>
+</section>
+
+<section class="section">
+  <p class="eyebrow center">FAQ</p>
+  <h2>Common questions</h2>
+  <div class="faq">
+    <div class="q"><button onclick="toggleFAQ(this)">Is this a real working webpage?</button><div class="answer">Yes. This is a working interactive HTML webpage. It can be opened in a browser and uploaded to a free hosting platform.</div></div>
+    <div class="q"><button onclick="toggleFAQ(this)">Can this be hosted for free?</button><div class="answer">Yes. You can host it for free using GitHub Pages, Netlify, or Vercel.</div></div>
+    <div class="q"><button onclick="toggleFAQ(this)">Can the form send emails?</button><div class="answer">The visual form works now. To send emails, connect it to a free service like Formspree, Netlify Forms, or a CRM.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">ADH <span>WorkforceOS</span></div>
+  <p>© 2026 ADH WorkforceOS. Free interactive website demo.</p>
+</footer>
+
+<script>
+function showTab(id, btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function calcSavings(val){
+  document.getElementById('empNum').textContent=val;
+  document.getElementById('empCount').textContent=val;
+  document.getElementById('savedHours').textContent=Math.round(val*0.5);
+}
+function generateAI(){
+  const text=document.getElementById('aiText').value || 'Create a professional HR response.';
+  document.getElementById('aiResult').innerHTML='<b>Demo AI Response:</b> Based on your request, here is a professional HR-safe draft: Please document the concern clearly, reference the attendance or workplace policy, outline expectations moving forward, and provide the employee an opportunity to respond. This should be reviewed by management before final use.';
+}
+function submitForm(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  document.getElementById('formMsg').textContent='Thank you, '+name+'. Your demo request has been captured in this webpage demo. Connect the form to email when you publish.';
+}
+function toggleFAQ(btn){
+  btn.parentElement.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
